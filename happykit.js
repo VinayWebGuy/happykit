@@ -83,19 +83,19 @@ let TimeAgo = {
             const now = new Date();
             const seconds = Math.floor((now - providedDate) / 1000);
             if (seconds < 60) {
-                res =  seconds + 's ago';
+                res = seconds + 's ago';
             } else if (seconds < 3600) {
                 const minutes = Math.floor(seconds / 60);
-                res =  minutes + 'm ago';
+                res = minutes + 'm ago';
             } else if (seconds < 86400) {
                 const hours = Math.floor(seconds / 3600);
-                res =  hours + 'h ago';
+                res = hours + 'h ago';
             } else {
                 const days = Math.floor(seconds / 86400);
-                res =  days + 'd ago';
+                res = days + 'd ago';
             }
         } catch (error) {
-            res =  'Invalid date format';
+            res = 'Invalid date format';
         }
 
         $(`#${obj.where}`).html(res)
@@ -126,6 +126,81 @@ let Clock = {
         updateTime();
     }
 }
-
 // Clock Ends
+
+// Happyfy Starts
+let Happyfy = {
+
+    show : function(obj) {
+            let dimensions = obj.dimensions;
+            let heading = obj.heading ? `<div class="happyfy-header"><span>${obj.heading}</span> <hr></div>` : ``;
+            let content = `<div class="happyfy-body">${obj.content}</div>`
+            let footer =  obj.footer ? `<div class="happyfy-footer"><hr><span>${obj.footer}</span></div>` : `<div class="happyfy-footer"><hr><span>Happyfy Notification</span></div>`;
+            let closeIcon = obj.closeIcon ? `<div class="happyfy-close"><i class="fa fa-times"></i></div>` : ""
+
+            let data = `<div id="happyfy">${closeIcon} ${heading} ${content} ${footer}</div>`
+            $('body').append(data)
+
+            $('#happyfy').css({
+                height: dimensions[0],
+                width: dimensions[1],
+                backgroundColor: obj.bg,
+                color: obj.color,
+                borderRadius: obj.radius + 'px',
+                right: (obj.right ? obj.right : ""),
+                left: (obj.left ? obj.left : ""),
+                top: (obj.top ? obj.top : ""),
+                bottom: (obj.bottom ? obj.bottom : ""),
+                zIndex: (obj.index ? obj.index : 1)
+            })
+
+            if(obj.autoClose) {
+                setTimeout(() => {
+                    $('#happyfy').fadeOut();
+                }, obj.autoCloseTime * 1000);
+            }
+            
+    }
+}
+// Happyfy Ends
+
+
+// Greet Starts
+let greets = {
+    greet1 : `<div id="greet"><div id="greet-1"><div class="loadingpercenttext"><span class="loadingpercent">5</span>%</div><div class="loadingbar"><span class="loadingprogress"></span></div></div></div>`
+}
+
+
+let Greet = {
+    show: function () {
+        // Check if the message has been displayed before
+        if (!localStorage.getItem('greet1Displayed')) {
+            $('body').append(greets.greet1)
+            let loadingpercent = Number($('.loadingpercent').html());
+            console.log(loadingpercent);
+            let loadingInterval = setInterval(() => {
+                $('.loadingpercent').html(loadingpercent);
+                $('.loadingprogress').css({ width: `${loadingpercent}%` });
+                if (loadingpercent < 50) {
+                    loadingpercent += 10;
+                }
+                if (loadingpercent < 80) {
+                    loadingpercent += 5;
+                }
+                if (loadingpercent < 90) {
+                    loadingpercent += 3;
+                }
+                else if (loadingpercent < 100) {
+                    loadingpercent += 1;
+                }
+                else {
+                    clearInterval(loadingInterval);
+                    localStorage.setItem('greet1Displayed', 'true');
+                    $('#greet-1').remove();
+                }
+            }, 1000);
+        }
+    }
+}
+// Greet Ends
 

@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
-    margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif;
+    margin: 0; padding: 0; box-sizing: border-box; font-family: Poppins;
 }
 /* -------------------- */
 #hk_loader-1 {
@@ -54,9 +55,84 @@
 }
 /* -------------------- */
 
-
-
-
 .hk_loader.show {
     display: flex !important;
+}
+
+
+#happyfy {
+    padding: 7px;
+    position: fixed;
+    user-select: none;
+}
+.happyfy hr {
+    opacity: 0.6;
+}
+.happyfy-header {
+    text-align: center;
+    font-weight: bold;
+}
+.happyfy-header span {
+    margin-bottom: 7px;
+    display: block;
+}
+.happyfy-body {
+    font-size: 0.9rem;
+    margin: 10px;
+    
+}
+.happyfy-footer {
+    font-style: italic;
+}
+.happyfy-footer span {
+    display: block;
+    font-size: 0.7rem;
+    text-align: right;
+    margin-top: 7px;
+    opacity: 0.5;
+}
+.happyfy-close {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    cursor: pointer;
+    position: absolute;
+    right: 8px;
+}
+
+#greet {
+    height: 100vh;
+    width: 100vw;
+    background-color: #ffffff50;
+    z-index: 9999999999;
+   
+}
+#greet-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    flex-direction: column;
+}
+#greet #greet-1 .loadingbar {
+    width: 50%;
+    height: 15px;
+    background-color: #212121;
+    display: flex;
+    justify-content: flex-start;
+    padding: 2px;
+}
+#greet #greet-1 .loadingpercenttext {
+    letter-spacing: 0.3rem;
+    font-weight: 800;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #212121;
+}
+#greet #greet-1 .loadingprogress {
+    width: 5%;
+    height: 100%;
+    background-color: #ccc;
 }

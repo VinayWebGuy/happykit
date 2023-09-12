@@ -43,3 +43,25 @@ Clock.show({
     ampm: false,
 
 });
+
+
+
+Happyfy.show({
+    heading: "",
+    content: "Hello world how are you?",
+    footer: "",
+    dimensions : ["auto","300px"],
+    bg: "#008aff",
+    color: "#fff",
+    closeIcon: false,
+    autoClose: true,
+    autoCloseTime: 1,
+    radius: 10,
+    right: "20px",
+    bottom: "20px",
+    index: 9,
+})
+
+
+
+Greet.show();
