@@ -1,7 +1,7 @@
 * {
     margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif;
 }
-
+/* -------------------- */
 #hk_loader-1 {
     border-radius: 50%;
     border-right-color: transparent !important;
@@ -12,10 +12,13 @@
         transform: rotate(360deg);
     }
 }
+/* -------------------- */
 
+/* -------------------- */
 #hk_loader-2 {
     display: flex;
     justify-content: space-between;
+    display: none;
 }
 .loader-span {
     height: 100%;
@@ -23,7 +26,6 @@
     display: inline-block;
     transform-origin: bottom;
 }
-
 @keyframes loader2animation {
     0% {
         transform: scaleY(0);
@@ -32,14 +34,29 @@
         transform: scaleY(1);
     }
 }
+/* -------------------- */
 
-
-
-
+/* -------------------- */
+#hk_loader-3 {
+    background-color: red;
+    display: flex;
+    justify-content: flex-start;
+    padding: 2px;
+    display: none;
+}
+#hk_loader-3 span {
+    height: 100%;
+}
+@keyframes loader3animation {
+    to {
+        width: 100%;
+    }
+}
+/* -------------------- */
 
 
 
 
 .hk_loader.show {
-    display: block !important;
+    display: flex !important;
 }
