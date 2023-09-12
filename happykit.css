@@ -1,0 +1,45 @@
+* {
+    margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif;
+}
+
+#hk_loader-1 {
+    border-radius: 50%;
+    border-right-color: transparent !important;
+    display: none;
+}
+@keyframes loader1animation {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#hk_loader-2 {
+    display: flex;
+    justify-content: space-between;
+}
+.loader-span {
+    height: 100%;
+    width: 25%;
+    display: inline-block;
+    transform-origin: bottom;
+}
+
+@keyframes loader2animation {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+
+
+
+
+
+
+
+.hk_loader.show {
+    display: block !important;
+}
