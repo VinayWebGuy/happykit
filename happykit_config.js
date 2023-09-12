@@ -27,3 +27,19 @@ Loader3.show({
 Loader1.hide();
 Loader2.hide();
 Loader3.hide();
+
+
+
+TimeAgo.process({
+    where: 't1',
+    date: new Date('2023-09-12T12:00:00'),
+})
+
+
+
+
+Clock.show({
+    where: 'c1',
+    ampm: false,
+
+});
