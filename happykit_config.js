@@ -19,7 +19,7 @@ Loader3.show({
     dimensions: ["10px", "200px"],
     color: "#00f",
     loadingColor: "#f00",
-    // initialProgress : 0,
+    initialProgress : 0,
     speed: 30,
 })
 
@@ -48,14 +48,15 @@ Clock.show({
 
 Happyfy.show({
     heading: "",
-    content: "Hello world how are you?",
+    content: "Welcome to Happykit.",
     footer: "",
     dimensions : ["auto","300px"],
     bg: "#008aff",
     color: "#fff",
-    closeIcon: false,
-    autoClose: true,
+    closeIcon: true,
+    autoClose: false,
     autoCloseTime: 1,
+    closeEffect: "slide",
     radius: 10,
     right: "20px",
     bottom: "20px",

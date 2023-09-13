@@ -153,12 +153,25 @@ let Happyfy = {
                 bottom: (obj.bottom ? obj.bottom : ""),
                 zIndex: (obj.index ? obj.index : 1)
             })
-
             if(obj.autoClose) {
                 setTimeout(() => {
-                    $('#happyfy').fadeOut();
+                    if(obj.closeEffect == "fade" || obj.closeEffect == ""){
+                        $('#happyfy').fadeOut();
+                    }
+                    else if(obj.closeEffect == "slide") {
+                        $('#happyfy').slideUp();
+                    }
                 }, obj.autoCloseTime * 1000);
             }
+
+            $('.happyfy-close').click(function() {
+                if(obj.closeEffect == "fade" || obj.closeEffect == ""){
+                    $('#happyfy').fadeOut();
+                }
+                else if(obj.closeEffect == "slide") {
+                    $('#happyfy').slideUp();
+                }
+            })
             
     }
 }
