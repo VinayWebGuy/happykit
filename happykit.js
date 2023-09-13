@@ -185,9 +185,9 @@ let greets = {
 
 
 let Greet = {
-    show: function () {
+    show: function (obj) {
         // Check if the message has been displayed before
-        if (!localStorage.getItem('greet1Displayed')) {
+        if (!localStorage.getItem('greet1Displayed') || obj.everytime == true) {
             $('body').append(greets.greet1)
             let loadingpercent = Number($('.loadingpercent').html());
             console.log(loadingpercent);

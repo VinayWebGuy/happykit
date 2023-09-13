@@ -41,7 +41,6 @@ TimeAgo.process({
 Clock.show({
     where: 'c1',
     ampm: false,
-
 });
 
 
@@ -65,4 +64,6 @@ Happyfy.show({
 
 
 
-Greet.show();
+Greet.show({
+    everytime: false,
+});
