@@ -209,7 +209,7 @@ let Greet = {
                 else {
                     clearInterval(loadingInterval);
                     localStorage.setItem('greet1Displayed', 'true');
-                    $('#greet-1').remove();
+                    $('#greet').remove();
                 }
             }, 1000);
         }

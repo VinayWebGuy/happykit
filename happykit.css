@@ -103,8 +103,9 @@
 #greet {
     height: 100vh;
     width: 100vw;
-    background-color: #ffffff50;
+    background-color: #fff;
     z-index: 9999999999;
+    position: fixed;
    
 }
 #greet-1 {
@@ -113,7 +114,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
     flex-direction: column;
 }
 #greet #greet-1 .loadingbar {
